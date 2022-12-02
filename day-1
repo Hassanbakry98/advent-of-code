@@ -1,0 +1,15 @@
+with open('input.txt') as f:
+    lines = f.readlines()
+
+highiest_elf = 0
+elf_sum = 0
+
+for meal in lines:
+    if meal == '\n':
+        if elf_sum > highiest_elf:
+            highiest_elf = elf_sum
+        elf_sum = 0
+    else:
+        elf_sum = elf_sum + int(meal)
+
+print(highiest_elf)
